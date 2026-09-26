@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shades of Nüde | Book Shop</title>
+    <meta
+      name="description"
+      content="Mini online book store landing page with two featured titles and a warm sage-and-cream aesthetic."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-wrap">
+        <span class="brand-mark">S</span>
+        <span class="brand-name">Shades of Nüde</span>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#journal">Journal</a>
+      </nav>
+      <button class="nav-button cart-trigger" id="cartTrigger" type="button" aria-haspopup="dialog" aria-controls="cartDialog">
+        Cart <span id="cartCount" class="cart-count">0</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="about" id="about">
+        <div class="section-heading">
+          <p class="eyebrow">Our story</p>
+          <h2>Books that feel like home</h2>
+        </div>
+        <div class="about-content">
+          <p>
+            Shades of Nüde is a small, independent book shop founded in 2023 by a group of friends who share a love for
+            literature and design. We believe that books are more than just words on a page—they are objects of beauty
+            that can inspire, comfort, and transform.
+          </p>
+          <p>
+            Our curated selection features timeless classics, contemporary fiction, memoirs, poetry, and self-growth
+            titles. Each book is chosen for its literary merit, aesthetic appeal, and ability to spark meaningful
+            conversations.
+          </p>
+        </div>
+      </section>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Curated reads for slow evenings</p>
+          <h1>Thoughtful stories, beautifully bound.</h1>
+          <p class="subtitle">
+            Discover gentle, iconic books chosen to stir your imagination and enrich your shelf.
+          </p>
+          <div class="cta-row">
+            <button class="primary-btn" data-product="The Silent Meadow" type="button">Buy now</button>
+            <a href="#shop" class="secondary-link">Browse library</a>
+          </div>
+          <ul class="stats" aria-label="Book store highlights">
+            <li><strong>2</strong><span>featured books</span></li>
+            <li><strong>4.9/5</strong><span>reader love</span></li>
+            <li><strong>Free</strong><span>shipping over $45</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-label="Featured book covers">
+          <div class="book-card card-one">
+            <img
+              src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=80"
+              alt="Book cover for The Silent Meadow"
+            />
+            <div class="book-info">
+              <span class="book-tag">Featured</span>
+              <h2>The Silent Meadow</h2>
+              <p>$24.00</p>
+            </div>
+          </div>
+
+          <div class="book-card card-two">
+            <img
+              src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=900&q=80"
+              alt="Book cover for The Last Candlelight"
+            />
+            <div class="book-info">
+              <span class="book-tag">New arrival</span>
+              <h2>The Last Candlelight</h2>
+              <p>$28.00</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="products" id="shop">
+        <div id="product-list" class="section-heading">
+          <p class="eyebrow">Popular picks</p>
+          <h2>Freshly added to the shelf</h2>
+        </div>
+
+        <div class="catalog-shell">
+          <div class="catalog-toolbar">
+            <div class="filter-group" aria-label="Filter books by category">
+              <button class="filter-btn active" data-category="all" type="button">All</button>
+              <button class="filter-btn" data-category="fiction" type="button">Fiction</button>
+              <button class="filter-btn" data-category="memoir" type="button">Memoir</button>
+              <button class="filter-btn" data-category="poetry" type="button">Poetry</button>
+              <button class="filter-btn" data-category="self-growth" type="button">Self-growth</button>
+            </div>
+
+            <label class="sort-wrap" for="sortSelect">
+              <span>Sort by</span>
+              <select id="sortSelect">
+                <option value="featured">Featured</option>
+                <option value="low-to-high">Price: low to high</option>
+                <option value="high-to-low">Price: high to low</option>
+                <option value="az">Title: A–Z</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="catalogGrid" class="products-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="journal" id="journal" aria-labelledby="journalTitle">
+        <div class="journal-heading">
+          <div class="section-heading">
+            <p class="eyebrow">Notes from the reading room</p>
+            <h2 id="journalTitle">The Journal</h2>
+          </div>
+          <p class="journal-intro">Small reflections on stories, slow living, and the books we keep close.</p>
+        </div>
+
+        <div class="journal-grid">
+          <article class="journal-entry">
+            <a class="journal-entry-link" href="#journalArticle" data-journal-id="slow-morning" aria-haspopup="dialog">
+              <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80" alt="A notebook and pen ready for a quiet morning" loading="lazy" />
+              <div class="journal-entry-copy">
+                <p class="journal-meta">Reading rituals · 5 min read</p>
+                <h3>A slower way to start the day</h3>
+                <p>Make a little room for a few pages, a warm drink, and a morning that belongs to you.</p>
+                <span class="journal-read-link">Read entry <span aria-hidden="true">&rarr;</span></span>
+              </div>
+            </a>
+          </article>
+          <article class="journal-entry">
+            <a class="journal-entry-link" href="#journalArticle" data-journal-id="soft-landing" aria-haspopup="dialog">
+              <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=900&q=80" alt="A stack of books in a sunlit reading nook" loading="lazy" />
+              <div class="journal-entry-copy">
+                <p class="journal-meta">On the shelf · 4 min read</p>
+                <h3>Books that feel like a soft landing</h3>
+                <p>Three comforting reads for the days when you need a familiar voice and a gentler pace.</p>
+                <span class="journal-read-link">Read entry <span aria-hidden="true">&rarr;</span></span>
+              </div>
+            </a>
+          </article>
+          <article class="journal-entry">
+            <a class="journal-entry-link" href="#journalArticle" data-journal-id="thoughtful-shelf" aria-haspopup="dialog">
+              <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=80" alt="Books arranged together on a wooden shelf" loading="lazy" />
+              <div class="journal-entry-copy">
+                <p class="journal-meta">Behind the pages · 6 min read</p>
+                <h3>How we build a thoughtful bookshelf</h3>
+                <p>Our approach to choosing books with care, from the first page to the place they find at home.</p>
+                <span class="journal-read-link">Read entry <span aria-hidden="true">&rarr;</span></span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="journal-dialog" id="journalArticle" aria-labelledby="journalArticleTitle">
+      <article class="journal-dialog-panel">
+        <header class="journal-dialog-header">
+          <p class="eyebrow" id="journalArticleMeta"></p>
+          <button class="icon-button" id="closeJournal" type="button" aria-label="Close journal entry">&times;</button>
+        </header>
+        <img class="journal-dialog-image" id="journalArticleImage" alt="" />
+        <div class="journal-dialog-copy">
+          <h2 id="journalArticleTitle"></h2>
+          <div id="journalArticleBody"></div>
+        </div>
+      </article>
+    </dialog>
+
+    <dialog class="cart-dialog" id="cartDialog" aria-labelledby="cartTitle">
+      <div class="cart-panel">
+        <header class="cart-header">
+          <div>
+            <p class="eyebrow">Your little library</p>
+            <h2 id="cartTitle">Shopping cart</h2>
+          </div>
+          <button class="icon-button" id="closeCart" type="button" aria-label="Close cart">&times;</button>
+        </header>
+
+        <div id="cartView">
+          <div id="cartItems" class="cart-items" aria-live="polite"></div>
+          <div class="cart-summary" id="cartSummary">
+            <p><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></p>
+            <p><span>Shipping</span><strong id="cartShipping">$0.00</strong></p>
+            <p class="cart-total"><span>Total</span><strong id="cartTotal">$0.00</strong></p>
+            <small>Shipping is free on orders over $45.</small>
+          </div>
+          <button class="primary-btn checkout-button" id="checkoutButton" type="button">Continue to checkout</button>
+        </div>
+
+        <section id="checkoutForm" class="checkout-form" hidden aria-labelledby="checkoutTitle">
+          <button class="text-button" id="backToCart" type="button">&larr; Back to cart</button>
+          <h3 id="checkoutTitle">Secure checkout</h3>
+          <p class="checkout-note">You’ll continue to Stripe’s secure test checkout to enter your email, delivery address, and test payment details.</p>
+          <p id="checkoutError" class="checkout-error" role="alert" hidden></p>
+          <button class="primary-btn checkout-button" id="stripeCheckoutButton" type="button">Continue to Stripe</button>
+        </section>
+
+        <div id="orderConfirmation" class="order-confirmation" hidden aria-live="polite">
+          <span class="confirmation-mark" aria-hidden="true">&#10003;</span>
+          <h3>Order received</h3>
+          <p id="confirmationMessage"></p>
+          <button class="primary-btn checkout-button" id="finishOrder" type="button">Continue browsing</button>
+        </div>
+      </div>
+    </dialog>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
