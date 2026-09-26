@@ -223,7 +223,8 @@ function renderCart() {
 
   cartCount.textContent = String(itemCount);
   cartCount.setAttribute('aria-label', `${itemCount} items in cart`);
-  checkoutButton.disabled = lines.length === 0;
+  checkoutButton.disabled = false;
+  checkoutButton.textContent = lines.length === 0 ? 'Browse books' : 'Continue to checkout';
   cartSummary.hidden = lines.length === 0;
 
   if (!lines.length) {
@@ -352,7 +353,12 @@ cartDialog.addEventListener('click', (event) => {
 });
 
 checkoutButton.addEventListener('click', () => {
-  if (state.cart.length === 0) return;
+  if (state.cart.length === 0) {
+    cartDialog.close();
+    document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
+
   cartView.hidden = true;
   checkoutForm.hidden = false;
   checkoutError.hidden = true;
